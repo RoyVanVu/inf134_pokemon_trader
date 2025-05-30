@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Map, Search, Gift, MessageCircle } from 'lucide-react';
+import Logo from '../assets/Logo.png';
 import '../css/Navbar.css';
 
 const Navbar = ({ activeItem = '' }) => {
@@ -37,13 +38,8 @@ const Navbar = ({ activeItem = '' }) => {
       <div className="navbar-header">
         <div className="navbar-header-content">
           <NavLink to="/" className="navbar-logo-link">
-            <div className="navbar-logo-text">
-              Pokémon
-            </div>
-            <div className="navbar-pokemon-icon">
-              <div className="pokemon-ball">
-                <div className="pokemon-ball-highlight"></div>
-              </div>
+            <div>
+                <img src={Logo} alt="Brand logo" />
             </div>
           </NavLink>
         </div>
