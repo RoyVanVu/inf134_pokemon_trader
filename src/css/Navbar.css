@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  right: 0;
+  left: 0;
   top: 0;
   height: 100vh;
   width: 16rem;
@@ -28,17 +28,20 @@
   margin-bottom: 0.5rem;
 }
 
-.navbar-pokemon-icon {
-  width: 3rem;
-  height: 3rem;
-  background-color: #5eead4;
-  border-radius: 50%;
+.navbar-logo-link {
+  text-decoration: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.pokemon-ball {
+.navbar-logo-link img {
+  width: 150px;
+
+  object-fit: contain;
+}
+
+/* .pokemon-ball {
   width: 2rem;
   height: 2rem;
   background-color: #14b8a6;
@@ -54,7 +57,7 @@
   height: 0.5rem;
   background-color: white;
   border-radius: 50%;
-}
+} */
 
 .navbar-nav {
   padding: 1rem;
