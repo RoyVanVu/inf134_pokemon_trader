@@ -1,0 +1,63 @@
+.layout {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  position: relative;
+}
+
+.layout-content {
+  padding-right: 16rem; /* Space for navbar */
+  min-height: 100vh;
+}
+
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo link styling */
+.navbar-logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo-link:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .layout-content {
+    padding-right: 0;
+    padding-bottom: 5rem; /* Space for mobile navbar */
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+/* Page transition animations */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
