@@ -41,23 +41,6 @@
   object-fit: contain;
 }
 
-/* .pokemon-ball {
-  width: 2rem;
-  height: 2rem;
-  background-color: #14b8a6;
-  border-radius: 50%;
-  position: relative;
-}
-
-.pokemon-ball-highlight {
-  position: absolute;
-  top: 0.25rem;
-  left: 0.25rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: white;
-  border-radius: 50%;
-} */
 
 .navbar-nav {
   padding: 1rem;
@@ -149,7 +132,7 @@
   }
 }
 
-/* Animation for page transitions */
+/* Animation for page transitions
 .navbar-fade-in {
   animation: fadeIn 0.3s ease-in-out;
 }
@@ -163,4 +146,4 @@
     opacity: 1;
     transform: translateX(0);
   }
-}
+} */
