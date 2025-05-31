@@ -1,0 +1,324 @@
+/* Main messages page container */
+.messages-page {
+  margin-left: 70px;
+  margin-right: -90px;
+  margin-top: 80px;
+  padding: 12px;
+  background-color: #f9fafb;
+  min-height: calc(100vh - 80px);
+}
+
+.messages-card-container {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.messages-container {
+  display: flex;
+  height: 70vh;
+  background: none;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 0;
+}
+
+/* Sidebar */
+.messages-sidebar {
+  width: 320px;
+  background: #fff;
+  border-radius: 16px 0 0 16px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 0;
+}
+
+.messages-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+.messages-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #22223b;
+}
+
+.messages-edit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6366f1;
+  padding: 0.2em;
+  border-radius: 0.4em;
+  transition: background 0.15s;
+}
+.messages-edit-btn:hover {
+  background: #f3f4f6;
+}
+
+.messages-search-bar {
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.messages-search-input {
+  width: 100%;
+  padding: 0.6em 1em;
+  border-radius: 0.7em;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.15s;
+}
+.messages-search-input:focus {
+  border: 1.5px solid #6366f1;
+}
+
+.messages-chat-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 1.5rem;
+}
+
+.messages-chat-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+.messages-chat-list-item.active {
+  background: #f5f7ff;
+  border-left: 3px solid #6366f1;
+}
+.messages-chat-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.messages-chat-info {
+  flex: 1;
+  min-width: 0;
+}
+.messages-chat-name {
+  font-weight: 600;
+  color: #22223b;
+  font-size: 1.05em;
+  margin-bottom: 0.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.messages-chat-last {
+  color: #6b7280;
+  font-size: 0.97em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.messages-chat-time {
+  color: #bdbdbd;
+  font-size: 0.9em;
+  margin-left: 0.5em;
+  white-space: nowrap;
+}
+
+/* Main chat area */
+.messages-main {
+  flex: 1;
+  background: #fff;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.messages-main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 1rem 2rem;
+  border-bottom: 1.5px solid #f3f4f6;
+}
+
+.messages-main-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.messages-main-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.messages-main-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.messages-main-username {
+  font-weight: 600;
+  color: #22223b;
+  font-size: 1.08em;
+}
+
+.messages-main-status {
+  color: #4ade80;
+  font-size: 0.97em;
+  font-weight: 500;
+}
+
+.messages-offer-btn {
+  margin-left: 1.5rem;
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.7em;
+  padding: 0.6em 2.2em;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px 0 rgba(99,102,241,0.08);
+  cursor: pointer;
+  transition: background 0.18s;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.messages-offer-btn:hover {
+  background: #4338ca;
+}
+
+.messages-main-body {
+  flex: 1;
+  padding: 2rem 2rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  overflow-y: auto;
+}
+
+.messages-bubble {
+  max-width: 60%;
+  background: #f3f4f6;
+  color: #22223b;
+  padding: 0.9em 1.2em;
+  border-radius: 1.1em;
+  font-size: 1.05em;
+  align-self: flex-start;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.03);
+  word-break: break-word;
+}
+.messages-bubble.from-me {
+  background: #6366f1;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.messages-main-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 2rem 1.5rem 2rem;
+  border-top: 1.5px solid #f3f4f6;
+}
+
+.messages-main-input {
+  flex: 1;
+  padding: 0.7em 1em;
+  border-radius: 0.7em;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.15s;
+}
+.messages-main-input:focus {
+  border: 1.5px solid #6366f1;
+}
+
+.messages-attach-btn, .messages-send-btn {
+  background: none;
+  border: none;
+  color: #6366f1;
+  cursor: pointer;
+  padding: 0.4em;
+  border-radius: 0.5em;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.messages-attach-btn:hover, .messages-send-btn:hover {
+  background: #f3f4f6;
+}
+
+@media (max-width: 900px) {
+  .messages-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .messages-sidebar {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+  .messages-main {
+    border-radius: 0 0 16px 16px;
+  }
+}
+
+.messages-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem 1.2rem 2rem;
+  margin: 0 0 1.2rem 0;
+  background: transparent;
+  border-bottom: 1.5px solid #e5e7eb;
+  position: relative;
+  z-index: 2;
+}
+
+.messages-header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #22223b;
+  margin: 0;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+}
+
+.messages-header-offer-btn {
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.7em;
+  padding: 0.6em 2.2em;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px 0 rgba(99,102,241,0.08);
+  cursor: pointer;
+  transition: background 0.18s;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.messages-header-offer-btn:hover {
+  background: #4338ca;
+} 
