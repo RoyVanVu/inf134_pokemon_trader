@@ -28,8 +28,8 @@ const Layout = () => {
 
   return (
     <div className="layout">
-      {/* Main content area */}
-      <div className="layout-content">
+      {/* Main content area with proper spacing for navbar */}
+      <div className="layout-content" style={{ paddingRight: '16rem' }}>
         <main className="main-content">
           <Outlet />
         </main>

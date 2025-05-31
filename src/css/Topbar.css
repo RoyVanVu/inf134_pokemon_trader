@@ -1,0 +1,238 @@
+.navigation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 16px 32px; /* Increased padding for larger bar */
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e5e9;
+  min-height: 50px; /* Increased height */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 0; /* Remove any default margins */
+  position: fixed; /* Make it stick to top */
+  top: 0;
+  left: 16rem; /* Start after the navbar */
+  right: 0; /* Extend to the right edge */
+  z-index: 40; /* Below navbar but above content */
+}
+
+/* When search is hidden, adjust layout */
+.navigation-bar.no-search {
+  justify-content: flex-end; /* Push everything to the right */
+}
+
+.navigation-bar.no-search .filters-container {
+  margin-right: auto; /* Push filters to center when no search */
+  margin-left: 32px;
+}
+
+/* Search Section */
+.search-container {
+  flex: 0 0 470px; 
+  margin-left: -10px; 
+  margin-right: -170px; 
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px; /* More space from left */
+  color: #64748b;
+  z-index: 1;
+  width: 18px; /* Larger icon */
+  height: 18px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 48px; /* Increased padding */
+  border: 1px solid #d1d5db;
+  border-radius: 30px; /* Slightly more rounded */
+  font-size: 16px; /* Larger text */
+  color: #374151;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Filters Section */
+.filters-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Increased gap */
+  flex: 1;
+  justify-content: center;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* More space between text and icon */
+  padding: 16px 24px; /* Increased padding */
+  border: 1px solid #d1d5db;
+  border-radius: 30px; /* Slightly more rounded */
+  background-color: #ffffff;
+  color: #374151;
+  font-size: 16px; /* Larger text */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-button:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.filter-button.active {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
+
+.filter-label {
+  font-size: 15px; /* Larger text */
+}
+
+.dropdown-icon {
+  color: currentColor;
+  transition: transform 0.2s ease;
+  width: 16px; /* Larger icon */
+  height: 16px;
+}
+
+.filter-button.active .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Actions Section */
+.actions-container {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Increased gap */
+  flex: 0 0 auto;
+  margin-right: 24px; /* Added right margin */
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* Larger buttons */
+  height: 48px;
+  border: none;
+  border-radius: 30px; /* More rounded */
+  background-color: #f3f4f6;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.action-button svg {
+  width: 22px; /* Larger icons */
+  height: 22px;
+}
+
+.action-button:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.action-button:active {
+  transform: scale(0.95);
+}
+
+/* Notification Badge */
+.notifications-button .notification-badge {
+  position: absolute;
+  top: 10px; /* Adjusted for larger button */
+  right: 10px;
+  width: 10px; /* Slightly larger badge */
+  height: 10px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+/* Avatar */
+.avatar-container {
+  margin-left: 8px;
+}
+
+.avatar {
+  width: 40px; /* Larger avatar */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.avatar:hover {
+  border-color: #3b82f6;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navigation-bar {
+    padding: 8px 16px;
+    gap: 12px;
+    position: relative; /* Reset position for mobile */
+    left: 0;
+    right: 0;
+  }
+  
+  .search-container {
+    flex: 1;
+    margin-right: 12px;
+  }
+  
+  .filters-container {
+    display: none;
+  }
+  
+  .actions-container {
+    gap: 8px;
+  }
+  
+  .action-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation-bar {
+    padding: 8px 12px;
+    position: relative; /* Reset position for mobile */
+    left: 0;
+    right: 0;
+  }
+  
+  .search-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}

@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import Navbar from "../components/Navbar";
+import Topbar from "../components/Topbar";
 
 function Messages() {
     return (
-    <div style={{ paddingRight: '16rem' }}> 
-      <h1>Messages</h1>
-      <Navbar activeItem="nearby-traders" />
+    <div> 
+      <Topbar showSearch={false} showFilters={false} />
     </div>
     );
 }

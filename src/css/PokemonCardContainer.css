@@ -1,0 +1,208 @@
+/* css/PokemonCardContainer.css */
+
+.pokemon-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  width: 230px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pokemon-card:hover {
+  box-shadow: 0 25px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: scale(1.05);
+}
+
+.card-image-container {
+  position: relative;
+  background: linear-gradient(to bottom right, #e9d5ff, #bfdbfe, #e9d5ff);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.badge {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-holo-rare {
+  background-color: #7c3aed; /* purple-600 */
+}
+
+.badge-rare {
+  background-color: #eab308; /* yellow-500 */
+}
+
+.badge-uncommon {
+  background-color: #6b7280; /* gray-500 */
+}
+
+.badge-common {
+  background-color: #22c55e; /* green-500 */
+}
+
+.badge-excellent {
+  background-color: #2563eb; /* blue-600 */
+}
+
+.badge-good {
+  background-color: #22c55e; /* green-500 */
+}
+
+.badge-fair {
+  background-color: #eab308; /* yellow-500 */
+}
+
+.badge-poor {
+  background-color: #ef4444; /* red-500 */
+}
+
+.badge-default {
+  background-color: #6b7280; /* gray-500 */
+}
+
+.favorite-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-button:hover {
+  background-color: white;
+}
+
+.favorite-icon {
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease;
+}
+
+.favorite-icon.favorited {
+  color: #ef4444;
+  fill: #ef4444;
+}
+
+.favorite-icon.not-favorited {
+  color: #9ca3af;
+  fill: none;
+}
+
+.card-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.card-image {
+  width: 192px;
+  height: 256px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.user-avatar-container {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  object-fit: cover;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-type {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+.card-offer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.card-offer-label {
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.card-offer-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .pokemon-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Animation for smooth interactions */
+.pokemon-card * {
+  box-sizing: border-box;
+}
+
+/* Additional hover effects */
+.pokemon-card:hover .card-image {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover .user-avatar {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
