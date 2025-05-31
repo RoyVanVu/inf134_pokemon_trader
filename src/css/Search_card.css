@@ -1,0 +1,162 @@
+/* css/Search_card.css */
+
+.search-card-page {
+  margin-left: 70px;        /* Space for navbar */
+  margin-right: -90px;
+  margin-top: 80px;          /* Space for topbar */
+  padding: 12px;
+  background-color: #f9fafb;
+  min-height: calc(100vh - 80px);
+}
+
+.search-card-header {
+  margin-bottom: 32px;
+}
+
+.search-card-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+  margin: 0 0 24px 0;
+}
+
+.search-results-info {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.results-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.results-count {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Cards Grid Layout */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 64px;
+  margin-top: 24px;
+}
+
+/* Adjust Pokemon cards for main page */
+.search-card-page .pokemon-card {
+  width: 100%;
+  background-color: white;
+}
+
+/* Loading State */
+.search-card-page.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  height: calc(100vh - 80px);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* No Results State */
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 32px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.no-results-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.no-results-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.no-results-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .search-card-page {
+    margin-left: 0;
+    padding: 16px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  
+  .search-card-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-card-page {
+    margin-top: 60px;
+    padding: 16px;
+  }
+  
+  .search-results-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+  }
+  
+  .search-card-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -5,7 +5,7 @@
 }
 
 .layout-content {
-  padding-right: 16rem; /* Space for navbar */
+  padding-left: 16rem; /* Space for navbar */
   min-height: 100vh;
 }
 
