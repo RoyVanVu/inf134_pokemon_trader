@@ -1,0 +1,159 @@
+.map-bubble-container {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  z-index: 1000;
+}
+
+.map-bubble.chat-bubble {
+  min-width: 56px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 20px;
+  background-color: #232e6b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.map-bubble.chat-bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background: #232e6b;
+  z-index: 0;
+}
+
+.map-bubble.chat-bubble:hover {
+  transform: scale(1.08);
+  background: #1a2250;
+}
+
+.map-bubble.chat-bubble:hover::after {
+  background: #1a2250;
+}
+
+.bubble-dollar {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.25rem;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.bubble-avatar {
+  display: none;
+}
+
+.bubble-modal {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  z-index: 1001;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-content.modal-content-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.modal-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f3f4f6;
+}
+
+.modal-userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.modal-username {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.modal-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star-filled {
+  color: #fbbf24;
+  fill: #fbbf24;
+}
+
+.star-empty {
+  color: #d1d5db;
+}
+
+.modal-trades {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.profile-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.profile-button:hover {
+  background-color: #2563eb;
+} 

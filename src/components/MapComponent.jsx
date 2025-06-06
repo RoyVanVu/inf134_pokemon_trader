@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import MapBubbles from './MapBubbles';
 import '../css/MapComponent.css';
 
 const MapComponent = ({ 
@@ -9,12 +10,25 @@ const MapComponent = ({
   width = '100%',
   showControls = true,
   onMapClick,
-  onMarkerClick
+  onMarkerClick,
+  onProfileNavigate
 }) => {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const markersRef = useRef([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [bubblePositions, setBubblePositions] = useState([]);
+  const [bubbleLatLngs] = useState(() => {
+    // Generate random lat/lng positions once
+    const positions = [];
+    for (let i = 0; i < 20; i++) {
+      positions.push({
+        lat: 33.6405 + (Math.random() - 0.5) * 0.1, // Random position around UCI
+        lng: -117.8389 + (Math.random() - 0.5) * 0.1
+      });
+    }
+    return positions;
+  });
 
   useEffect(() => {
     // Load Leaflet CSS and JS
@@ -62,6 +76,19 @@ const MapComponent = ({
       });
     }
 
+    // Convert lat/lng positions to pixel positions
+    const updateBubblePositions = () => {
+      const positions = bubbleLatLngs.map(latLng => {
+        const point = map.latLngToContainerPoint([latLng.lat, latLng.lng]);
+        return { x: point.x, y: point.y };
+      });
+      setBubblePositions(positions);
+    };
+
+    // Update positions when map moves
+    map.on('move', updateBubblePositions);
+    updateBubblePositions();
+
     mapInstanceRef.current = map;
 
     return () => {
@@ -70,7 +97,7 @@ const MapComponent = ({
         mapInstanceRef.current = null;
       }
     };
-  }, [isLoaded, center, zoom, showControls, onMapClick]);
+  }, [isLoaded, center, zoom, onMapClick, bubbleLatLngs]);
 
   useEffect(() => {
     if (!mapInstanceRef.current) return;
@@ -123,7 +150,15 @@ const MapComponent = ({
         ref={mapRef} 
         className={`map-element ${!isLoaded ? 'map-hidden' : ''}`}
         style={{ height: '100%', width: '100%' }}
-      />
+      >
+        {isLoaded && bubblePositions.map((position, index) => (
+          <MapBubbles
+            key={index}
+            position={position}
+            onNavigateToProfile={onProfileNavigate}
+          />
+        ))}
+      </div>
     </div>
   );
 };
